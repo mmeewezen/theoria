@@ -1,0 +1,20 @@
+services:
+
+  theoria-api:
+    build: ./api
+    container_name: theoria-api
+    restart: unless-stopped
+    volumes:
+      - theoria-data:/data    # database blijft bewaard bij herstart
+
+  theoria-frontend:
+    build: ./frontend
+    container_name: theoria-frontend
+    ports:
+      - "3010:80"             # bereikbaar op http://homelab-ip:3010
+    depends_on:
+      - theoria-api
+    restart: unless-stopped
+
+volumes:
+  theoria-data:
