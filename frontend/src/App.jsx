@@ -72,12 +72,13 @@ export default function App() {
       <div className="app">
         <nav className="topnav">
           <div className="topnav-logo" onClick={() => setView("home")}>
-            <svg viewBox="0 0 512 512" height="36" width="36" style={{borderRadius: 6, flexShrink: 0}}>
+            <svg viewBox="0 0 512 512" height="44" width="44" style={{borderRadius: 8, flexShrink: 0}}>
               <rect width="512" height="512" rx="80" fill="#1a1610"/>
               <rect x="2" y="2" width="508" height="508" rx="78" fill="none" stroke="#b5862a" strokeWidth="4"/>
               <text x="256" y="330" textAnchor="middle" fontFamily="Georgia, serif" fontSize="300" fill="#b5862a">Φ</text>
               <text x="256" y="420" textAnchor="middle" fontFamily="Georgia, serif" fontSize="52" fill="#9e9080" letterSpacing="20">THEORIA</text>
             </svg>
+            <span className="topnav-wordmark">Theoria</span>
           </div>
           <div className="topnav-tabs">
             <button className={`topnav-tab${view === "home" ? " active" : ""}`} onClick={() => setView("home")}>
