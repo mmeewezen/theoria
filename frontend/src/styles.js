@@ -12,7 +12,7 @@ export const css = `
 
   /* ── Topnav ── */
   .topnav { height: 64px; background: var(--ink); display: flex; align-items: center; padding: 0 1.5rem; gap: 1.5rem; border-bottom: 3px solid var(--gold); flex-shrink: 0; }
-  .topnav-logo { font-family: 'EB Garamond', serif; font-size: 1.25rem; color: var(--parchment); letter-spacing: 0.08em; font-style: italic; flex: 1; cursor: pointer; }
+  .topnav-logo { display: flex; align-items: center; flex: 1; cursor: pointer; }
   .topnav-logo span { color: var(--gold); font-style: normal; }
   .topnav-tabs { display: flex; gap: 0.25rem; align-items: center; }
   .topnav-tab { background: none; border: 1px solid transparent; color: #9e9080; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; cursor: pointer; border-radius: 3px; transition: all 0.15s; }
