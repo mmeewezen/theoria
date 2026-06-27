@@ -3,6 +3,7 @@ export default function HomeView({ library, onSelectPhilosopher }) {
     <div className="home">
       <div className="home-hero">
         <div className="home-hero-eyebrow">Filosofie Reader</div>
+        <div className="home-hero-phi">Φ</div>
         <h1>Theoria</h1>
         <p>Klassieke teksten — gelezen, geannoteerd, begrepen.</p>
       </div>
