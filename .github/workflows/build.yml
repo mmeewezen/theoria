@@ -1,0 +1,41 @@
+name: Build and Push to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: Inloggen bij Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Buildx instellen (multi-platform bouwen)
+        uses: docker/setup-buildx-action@v3
+
+      - name: Frontend image bouwen en pushen
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          push: true
+          tags: mmeewezen/theoria-frontend:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: API image bouwen en pushen
+        uses: docker/build-push-action@v5
+        with:
+          context: ./api
+          push: true
+          tags: mmeewezen/theoria-api:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
