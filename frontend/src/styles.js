@@ -161,9 +161,51 @@ export const css = `
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
-    .fragment { grid-template-columns: 1fr; }
-    .fragments, .home-content, .readinglist, .cms { padding: 1.5rem 1.25rem; }
-    .work-header { padding: 2rem 1.25rem 1.5rem; }
+
+    /* Navigatie — tabs scrollen horizontaal */
+    .topnav { padding: 0 1rem; gap: 0.75rem; }
+    .topnav-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 0.15rem; }
+    .topnav-tabs::-webkit-scrollbar { display: none; }
+    .topnav-tab { padding: 0.35rem 0.6rem; font-size: 0.65rem; white-space: nowrap; }
+    .topnav-logo { font-size: 1rem; flex-shrink: 0; }
+
+    /* Reader — zijbalk verbergen, tekst volle breedte */
+    .sidebar { display: none; }
+    .body { flex-direction: column; }
+    .main { width: 100%; }
+
+    /* Werk-header compacter */
+    .work-header { padding: 1.5rem 1.25rem 1.25rem; }
+    .work-title { font-size: 2rem; }
+    .work-subtitle { font-size: 1rem; }
+
+    /* Fragmenten — één kolom, minder padding */
+    .fragment { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.5rem 0; }
+    .fragments { padding: 0 1.25rem 3rem; }
+
+    /* Aantekeningen en inzichten onder de tekst */
+    .fragment-side { margin-top: 0; }
+
+    /* Home en bibliotheek */
+    .home-hero { padding: 2.5rem 1.25rem 2rem; }
+    .home-hero h1 { font-size: 2.5rem; }
+    .home-content { padding: 1.5rem 1.25rem; }
+    .philosopher-grid { grid-template-columns: 1fr; }
+    .philosopher-card { padding: 1.5rem; }
+    .lib-grid { grid-template-columns: 1fr; }
+
+    /* Leeslijst en CMS */
+    .readinglist { padding: 1.5rem 1.25rem; }
+    .cms { padding: 1.5rem 1.25rem; }
     .field-grid { grid-template-columns: 1fr; }
+    .cms-item { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .cms-item-actions { width: 100%; justify-content: flex-start; }
+
+    /* Formulierrijen in CMS */
+    .utterance-row { grid-template-columns: 100px 1fr 32px; }
+    .insight-row { grid-template-columns: 1fr 32px; }
+
+    /* Toast onderaan iets hoger ivm browser-balk */
+    .toast { bottom: 5rem; right: 1rem; left: 1rem; }
   }
 `;
