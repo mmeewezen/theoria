@@ -1,20 +1,31 @@
 services:
 
   theoria-api:
-    build: ./api
+    image: mmeewezen/theoria-api:latest
     container_name: theoria-api
     restart: unless-stopped
+    networks:
+      - theoria-net
     volumes:
-      - theoria-data:/data    # database blijft bewaard bij herstart
+      - theoria-data:/data
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
 
   theoria-frontend:
-    build: ./frontend
+    image: mmeewezen/theoria-frontend:latest
     container_name: theoria-frontend
     ports:
-      - "3010:80"             # bereikbaar op http://homelab-ip:3010
+      - "3010:80"
     depends_on:
       - theoria-api
     restart: unless-stopped
+    networks:
+      - theoria-net
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+  theoria-net:
 
 volumes:
   theoria-data:
