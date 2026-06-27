@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#1a1610"/>
+  <rect x="2" y="2" width="508" height="508" rx="78" fill="none" stroke="#b5862a" stroke-width="4"/>
+  <text
+    x="256"
+    y="330"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="300"
+    font-weight="400"
+    fill="#b5862a"
+  >Φ</text>
+  <text
+    x="256"
+    y="420"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="52"
+    font-weight="400"
+    fill="#9e9080"
+    letter-spacing="20"
+  >THEORIA</text>
+</svg>
