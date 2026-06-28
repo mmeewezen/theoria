@@ -19,6 +19,9 @@ export const css = `
   .topnav-tab { background: none; border: 1px solid transparent; color: #9e9080; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; cursor: pointer; border-radius: 3px; transition: all 0.15s; }
   .topnav-tab:hover { color: var(--parchment); border-color: #4a4030; }
   .topnav-tab.active { color: white; background: var(--gold); border-color: var(--gold); }
+  .topnav-tab-gear { font-size: 1rem; padding: 0.4rem 0.6rem; opacity: 0.6; }
+  .topnav-tab-gear:hover { opacity: 1; }
+  .topnav-tab-gear.active { opacity: 1; }
 
   /* ── Layout ── */
   .body { display: flex; flex: 1; overflow: hidden; }
@@ -45,11 +48,11 @@ export const css = `
   .breadcrumb-link:hover { color: var(--gold); }
 
   /* ── Home ── */
-  .home-hero { background: var(--ink); color: var(--parchment); padding: 4rem 3rem 3.5rem; border-bottom: 3px solid var(--gold); text-align: center; }
-  .home-hero-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  .home-hero h1 { font-size: 3.5rem; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 0.75rem; font-style: italic; }
+  .home-hero { background: var(--ink); color: var(--parchment); padding: 3.5rem 3rem 3rem; border-bottom: 3px solid var(--gold); text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+  .home-hero-eyebrow { display: none; }
+  .home-hero h1 { font-size: 3.5rem; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 0.75rem; margin-top: 0; font-style: italic; }
   .home-hero p { color: #9e9080; font-size: 1rem; max-width: 50ch; margin: 0 auto; line-height: 1.7; }
-  .home-hero-phi { font-family: 'EB Garamond', Georgia, serif; font-size: 8rem; color: #b5862a; line-height: 1; margin-bottom: 0.25rem; opacity: 0.9; }
+  .home-hero-phi { font-family: 'EB Garamond', Georgia, serif; font-size: 7rem; color: #b5862a; line-height: 1; margin-bottom: 0; opacity: 0.9; }
   .home-content { padding: 3rem; }
   .home-section-label { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
   .philosopher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }

@@ -97,7 +97,7 @@ export default function App() {
             <button className={`topnav-tab${view === "readinglist" ? " active" : ""}`} onClick={() => setView("readinglist")}>
               Leeslijst
             </button>
-            <button className={`topnav-tab${view === "cms" ? " active" : ""}`} onClick={() => setView("cms")}>
+            <button className={`topnav-tab topnav-tab-gear${view === "cms" ? " active" : ""}`} onClick={() => setView("cms")}>
               ⚙
             </button>
           </div>
