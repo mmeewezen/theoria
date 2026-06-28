@@ -31,6 +31,32 @@ function FragmentView({ frag, accentColor, noteKey, notes, onSaveNote }) {
   );
 }
 
+function getYouTubeId(url) {
+  if (!url) return null;
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&
+?#]+)/);
+  return match ? match[1] : null;
+}
+
+function VideoPlayer({ url }) {
+  const id = getYouTubeId(url);
+  if (!id) return null;
+  return (
+    <div className="video-container">
+      <div className="video-label">Uitlegvideo</div>
+      <div className="video-wrapper">
+        <iframe
+          src={`https://www.youtube.com/embed/${id}`}
+          title="Uitlegvideo"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function ReaderView({ philosopher, work, onSelectWork, notes, onSaveNote }) {
   const accentColor = work.color || philosopher.color || "#b5862a";
 
@@ -80,6 +106,7 @@ export default function ReaderView({ philosopher, work, onSelectWork, notes, onS
           <p className="work-desc">{work.description}</p>
           <div className="work-year">{work.year}</div>
         </div>
+        {work.video_url && <VideoPlayer url={work.video_url} />}
         <div className="fragments">
           {(work.fragments || []).map(f => (
             <FragmentView

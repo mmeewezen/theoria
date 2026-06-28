@@ -222,6 +222,10 @@ export default function CmsView({ library, onRefresh, onToast }) {
                   <label className="field-label">Beschrijving</label>
                   <textarea className="field-input" value={form.description || ""} onChange={e => setF("description", e.target.value)} rows={3} />
                 </div>
+                <div className="field-group">
+                  <label className="field-label">YouTube URL (optioneel)</label>
+                  <input className="field-input" value={form.video_url || ""} onChange={e => setF("video_url", e.target.value)} placeholder="https://www.youtube.com/watch?v=..." />
+                </div>
                 <div className="btn-row">
                   <button className="btn btn-gold" onClick={saveWork}>Opslaan</button>
                   <button className="btn btn-ghost" onClick={() => setEditing(null)}>Annuleren</button>
