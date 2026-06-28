@@ -33,11 +33,13 @@ function FragmentView({ frag, accentColor, noteKey, notes, onSaveNote }) {
 
 function getYouTubeId(url) {
   if (!url) return null;
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&
-?#]+)/);
-  return match ? match[1] : null;
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes('youtube.com')) return u.searchParams.get('v');
+    if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
+  } catch {}
+  return null;
 }
-
 function VideoPlayer({ url }) {
   const id = getYouTubeId(url);
   if (!id) return null;
