@@ -48,9 +48,9 @@ export const css = `
   .breadcrumb-link:hover { color: var(--gold); }
 
   /* ── Home ── */
-  .home-hero { background: var(--ink); color: var(--parchment); border-bottom: 3px solid var(--gold); text-align: center; position: relative; overflow: hidden; min-height: 280px; display: flex; align-items: center; justify-content: center; }
-  .home-hero-bg-phi { position: absolute; font-family: 'EB Garamond', Georgia, serif; font-size: 28rem; color: #b5862a; opacity: 0.12; line-height: 1; user-select: none; pointer-events: none; top: 50%; left: 50%; transform: translate(-50%, -46%); }
-  .home-hero-content { position: relative; z-index: 1; padding: 3.5rem 3rem 3rem; }
+  .home-hero { background: var(--ink); color: var(--parchment); border-bottom: 3px solid var(--gold); position: relative; overflow: hidden; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+  .home-hero-bg-phi { position: absolute; font-family: 'EB Garamond', Georgia, serif; font-size: 20rem; color: #b5862a; opacity: 0.12; line-height: 1; user-select: none; pointer-events: none; top: 50%; left: 50%; transform: translate(-50%, -44%); }
+  .home-hero-content { position: relative; z-index: 1; padding: 3.5rem 3rem 3rem; text-align: center; width: 100%; }
   .home-hero h1 { font-size: 3.5rem; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 0.5rem; font-style: italic; }
   .home-hero-sub { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
   .home-hero p { color: #9e9080; font-size: 1rem; max-width: 50ch; margin: 0 auto; line-height: 1.7; }
