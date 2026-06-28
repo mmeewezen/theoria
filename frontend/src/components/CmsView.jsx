@@ -29,7 +29,7 @@ export default function CmsView({ library, onRefresh, onToast }) {
   }
 
   async function saveWork() {
-    const payload = { id: form.id || uid(), philosopher_id: selectedPhil, title: form.title, subtitle: form.subtitle, year: form.year, color: form.color || "#b5862a", description: form.description };
+    const payload = { id: form.id || uid(), philosopher_id: selectedPhil, title: form.title, subtitle: form.subtitle, year: form.year, color: form.color || "#b5862a", description: form.description, video_url: form.video_url || null };
     if (editing === "new") await api.addWork(payload);
     else await api.updateWork(editing, payload);
     setEditing(null); onRefresh(); onToast("Werk opgeslagen");
