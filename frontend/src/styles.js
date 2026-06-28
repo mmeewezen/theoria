@@ -162,6 +162,12 @@ export const css = `
   .remove-btn { background: none; border: 1px solid var(--border); color: var(--muted); cursor: pointer; width: 32px; height: 36px; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
   .remove-btn:hover { border-color: #c0392b; color: #c0392b; }
 
+  /* ── Video ── */
+  .video-container { padding: 2rem 3rem; border-bottom: 1px solid var(--border); }
+  .video-label { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+  .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); }
+  .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
   /* ── Toast ── */
   .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--ink); color: var(--parchment); font-family: 'Inter', sans-serif; font-size: 0.78rem; padding: 0.65rem 1.1rem; border-left: 3px solid var(--gold); z-index: 1000; animation: slideUp 0.2s ease; }
   @keyframes slideUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
