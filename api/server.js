@@ -80,6 +80,13 @@ db.exec(`
   );
 `);
 
+// ─── Migratie — voeg video_url toe als die nog niet bestaat
+try {
+  db.exec("ALTER TABLE works ADD COLUMN video_url TEXT DEFAULT NULL");
+} catch (e) {
+  // Kolom bestaat al — geen actie nodig
+}
+
 // ─── Seed data als DB leeg is ─────────────────────────────────────────────────
 const philosopherCount = db.prepare("SELECT COUNT(*) as c FROM philosophers").get();
 if (philosopherCount.c === 0) {
@@ -154,18 +161,18 @@ app.get("/api/philosophers/:philId/works", (req, res) => {
 });
 
 app.post("/api/works", (req, res) => {
-  const { id, philosopher_id, title, subtitle, year, color, description, sort_order } = req.body;
+  const { id, philosopher_id, title, subtitle, year, color, description, sort_order, video_url } = req.body;
   try {
-    db.prepare("INSERT INTO works (id, philosopher_id, title, subtitle, year, color, description, sort_order) VALUES (?,?,?,?,?,?,?,?)")
-      .run(id, philosopher_id, title, subtitle || "", year || "", color || "#b5862a", description || "", sort_order || 0);
+    db.prepare("INSERT INTO works (id, philosopher_id, title, subtitle, year, color, description, sort_order, video_url) VALUES (?,?,?,?,?,?,?,?,?)")
+      .run(id, philosopher_id, title, subtitle || "", year || "", color || "#b5862a", description || "", sort_order || 0, video_url || null);
     res.json({ ok: true });
   } catch (e) { res.status(400).json({ error: e.message }); }
 });
 
 app.put("/api/works/:id", (req, res) => {
-  const { title, subtitle, year, color, description, sort_order } = req.body;
-  db.prepare("UPDATE works SET title=?, subtitle=?, year=?, color=?, description=?, sort_order=? WHERE id=?")
-    .run(title, subtitle, year, color, description, sort_order || 0, req.params.id);
+  const { title, subtitle, year, color, description, sort_order, video_url } = req.body;
+  db.prepare("UPDATE works SET title=?, subtitle=?, year=?, color=?, description=?, sort_order=?, video_url=? WHERE id=?")
+    .run(title, subtitle, year, color, description, sort_order || 0, video_url || null, req.params.id);
   res.json({ ok: true });
 });
 
